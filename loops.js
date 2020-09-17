@@ -11,16 +11,21 @@ function whileEven(num) {
   while (i < num) {
     i++;
     if (isDiv(i, 2)) {
-      console.log(i);
+      console.log(`whileEven: ${i}`);
     }
   }
 }
 
 function while3(num) {
   let j = num;
-  while (j < 0) {
-    j = j - 3;
-    console.log(j);
+  let counter = 0;
+  while (j > 0) {
+    counter++;
+    if (counter === 3) { // if the counter reaches 3, print the number 'j' and reset the counter to zero.
+      counter = 0;
+      console.log(`While3: ${j}`);
+    }
+    j--; // each step takes away from J, while each step adds to the counter.
   }
 }
 
@@ -28,7 +33,7 @@ function oddNumbers(num) {
   let toggle = true;
   for (let k = 1; k <= num; k++) {
     if (toggle) {
-      console.log(k);
+      console.log(`oddNumbers: ${k}`);
       toggle = false;
     } else {
       toggle = true;
@@ -39,13 +44,13 @@ function oddNumbers(num) {
 function helloWorld(num) {
   for (let n = 0; n <= num; n++) {
     if (isDiv(n, 3) && isDiv(n, 5)) {
-      console.log('HelloWorld'); //check for both first.
+      console.log('helloWorld: HelloWorld'); //check for both first.
     } else if (isDiv(n, 3)) {
-      console.log('Hello');
+      console.log('helloWorld: Hello');
     } else if (isDiv(n, 5)) {
-      console.log('World');
+      console.log('helloWorld: World');
     } else {
-      console.log(n);
+      console.log(`helloWorld: ${n}`);
     }
   }
 }
